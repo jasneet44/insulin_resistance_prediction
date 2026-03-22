@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+joblib
+numpy
+shap
+requests
+langchain
+langchain-community
+langchain-huggingface
+faiss-cpu
+sentence-transformers
+groq
+python-dotenv
