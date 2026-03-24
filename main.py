@@ -42,6 +42,7 @@ db = FAISS.load_local(
 
 # ---------------- INPUT SCHEMA ----------------
 class PatientData(BaseModel):
+    model_config = {"protected_namespaces": ()}
     model_type: str  # "basic", "intermediate", "advanced"
 
     Age: float
