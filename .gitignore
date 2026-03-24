@@ -27,6 +27,6 @@ Thumbs.db
 don't push/
 model/
 api/
-rag/
+don't push/rag/
 .vercel
 .env*.local
