@@ -18,9 +18,9 @@ groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # ---------------- LOAD MODELS ----------------
 models = {
-    "basic": joblib.load(os.path.join(BASE_DIR, "../model/basic_model.pkl")),
-    "intermediate": joblib.load(os.path.join(BASE_DIR, "../model/intermediate_model.pkl")),
-    "advanced": joblib.load(os.path.join(BASE_DIR, "../model/advanced_model.pkl"))
+    "basic": joblib.load(os.path.join(BASE_DIR, "basic_model.pkl")),
+    "intermediate": joblib.load(os.path.join(BASE_DIR, "intermediate_model.pkl")),
+    "advanced": joblib.load(os.path.join(BASE_DIR, "advanced_model.pkl"))
 }
 
 # SHAP explainers per model
@@ -35,7 +35,7 @@ embedding = HuggingFaceEmbeddings(
 )
 
 db = FAISS.load_local(
-    os.path.join(BASE_DIR, "../rag/"),
+    os.path.join(BASE_DIR, "rag/"),
     embedding,
     allow_dangerous_deserialization=True
 )

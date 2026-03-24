@@ -25,3 +25,8 @@ Thumbs.db
 .idea/
 
 don't push/
+rag/
+model/
+api/
+.vercel
+.env*.local
