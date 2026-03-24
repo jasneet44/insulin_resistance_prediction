@@ -25,7 +25,6 @@ Thumbs.db
 .idea/
 
 don't push/
-model/
 api/
 don't push/rag/
 .vercel
