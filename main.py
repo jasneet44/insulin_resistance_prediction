@@ -12,7 +12,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 app = FastAPI()
 
 # ✅ FIXED BASE DIR (points to project root)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 load_dotenv()
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -32,9 +32,9 @@ def load_everything():
 
     # ---------------- LOAD MODELS ----------------
     models = {
-        "basic": joblib.load(os.path.join(BASE_DIR, "models", "basic_model.pkl")),
-        "intermediate": joblib.load(os.path.join(BASE_DIR, "models", "intermediate_model.pkl")),
-        "advanced": joblib.load(os.path.join(BASE_DIR, "models", "advanced_model.pkl"))
+        "basic": joblib.load(os.path.join(BASE_DIR, "basic_model.pkl")),
+        "intermediate": joblib.load(os.path.join(BASE_DIR, "intermediate_model.pkl")),
+        "advanced": joblib.load(os.path.join(BASE_DIR, "advanced_model.pkl"))
     }
 
     print("✅ Models loaded")
@@ -56,7 +56,7 @@ def load_everything():
         )
 
         db = FAISS.load_local(
-            os.path.join(BASE_DIR, "rag"),
+            BASE_DIR,
             embedding,
             allow_dangerous_deserialization=True
         )
