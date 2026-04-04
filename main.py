@@ -157,7 +157,7 @@ Medical Context:
 {context}
 
 Explain this to a non-medical person in 3-4 simple sentences.
-Mention what was the major factor contributing to the outcome.
+Mention what was the major factor contributing to the outcome in their specific case.
 Include causes, meaning, and what the patient should understand.
 Suggest Recommendations and Lifestyle changes.
 """
